@@ -29,16 +29,6 @@ Ext.define('Screen.view.main.List', {
             displayField: 'name',
             valueField: 'value',
         },{
-            xtype: 'combobox',
-            flex: 1,
-            label: 'Filter',
-            labelAlign: 'left',
-            fieldLabel: 'Filter data by file name',
-//            store: { type: 'type'},
-            queryMode: 'local',
-            displayField: 'name',
-            valueField: 'value',
-        },{
             xtype: 'filefield',
             flex: 1,
             name: 'file',
@@ -50,6 +40,19 @@ Ext.define('Screen.view.main.List', {
         },{
             xtype: 'button',
             text: 'Screen'
+        }]
+    },{
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [{
+            xtype: 'combobox',
+            flex: 1,
+            label: 'Filter',
+            labelAlign: 'left',
+            fieldLabel: 'Filter data by file name',
+            queryMode: 'local',
+            displayField: 'name',
+            valueField: 'value',
         }]
     }],
 
@@ -66,8 +69,4 @@ Ext.define('Screen.view.main.List', {
         { text: 'Vessel', dataIndex: 'vessel', flex: 0.4, sortable: false },
         { text: 'Goods', dataIndex: 'goods', flex: 1, sortable: false }
     ],
-
-    listeners: {
-        select: 'onItemSelected'
-    }
 });

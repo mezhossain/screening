@@ -5,14 +5,7 @@ Ext.define("Screen.model.Result",{
 	fields : [
 	{
 		name: "uploadDate",
-		type: "string",
-		validators:[{
-			type:"length",
-			min: 1,
-			max: 255
-		},{
-			type: "presence"
-		}]
+		type: "date"
 	},{
 		name : "originalFile",
   		type : "string",

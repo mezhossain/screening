@@ -1,52 +1,25 @@
 Ext.define('Screen.view.screen.ResultViewModel', {
   extend: 'Ext.app.ViewModel',
   alias: 'viewmodel.result',
-  requires: [ 'Screen.model.Result' ],
+  data:{ item: null },
   stores: {
-    result: {
-      model: 'Screen.model.Bulk',
+    ResultStore: {
       autoLoad: true,
       autoSync: true,
-      proxy:
-      {
-        type: 'rest',
-        reader:
-        {
-          rootProperty: 'data',
-          type: 'json'
-        },
-        url: '/api/student',
-        writer: {
-          type: 'json',
-          dateFormat: 'd/m/Y',
-          writeAllFields: true
-        }
-      }
+      fields: [ 'uploadDate', 'originalFile', 'resultFile' ],
+      data : [{
+          uploadDate: '20/05/19',
+          originalFile: 'UBS Export Bill Parties & Goods 26-Feb-2019.xls',
+          resultFile: 'UBS Export Bill Parties & Goods 26-Feb-2019_result.xls'
+      }, {
+          uploadDate: '',
+          originalFile: '',
+          resultFile: ''
+      }, {
+          uploadDate: '',
+          originalFile: '',
+          resultFile: ''
+      }]
     }
   }
-    //   fields: [ 'uploadDate', 'originalFile', 'resultFile' ],
-    //   data : {
-    //     items: [{
-    //       uploadDate: '',
-    //       originalFile: '',
-    //       resultFile: ''
-    //     }, {
-    //       uploadDate: '',
-    //       originalFile: '',
-    //       resultFile: ''
-    //     }, {
-    //       uploadDate: '',
-    //       originalFile: '',
-    //       resultFile: ''
-    //     }]
-    //   },
-    //   proxy: {
-    //     type: 'memory',
-    //     reader: {
-    //       type: 'json',
-    //       rootProperty: 'items'
-    //     }
-    //   }
-    // },
-  
 });
