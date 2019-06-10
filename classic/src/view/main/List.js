@@ -58,7 +58,7 @@ Ext.define('Screen.view.main.List', {
 
     columns: [
         { text: 'Contract Ref No',  dataIndex: 'contractRefNo', flex: 1, sortable: true },
-        { text: 'BENEFICIARY', dataIndex: 'beneficiary', flex: 1, sortable: true },
+        { text: 'BENEFICIARY', dataIndex: 'beneficiary', flex: 1, sortable: true, },
         { text: 'Address', dataIndex: 'address', flex: 0.7, sortable: true },
         { text: 'Country', dataIndex: 'country', flex: 0.5, sortable: false },
         { text: 'BANK', dataIndex: 'bank', flex: 0.4, sortable: false },

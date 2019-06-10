@@ -73,107 +73,60 @@ Ext.define('Screen.view.main.Main', {
 
     items: [{
         title: 'Bulk Screen',
-        items: [{
-            xtype: 'mainlist'
-        }]
+        id: 'screenmain',
+        items: [
+            {
+                xtype: 'tabpanel',
+                items: [
+                    {
+                        title: 'Bulk Screen',
+                        items: [{
+                            xtype: 'mainlist'
+                        }],
+                        id: 'screen'
+                    },
+                    {
+                        xtype: 'panel',
+                        title: 'View Report',
+                        items: [{
+                            xtype: 'result'
+                        }],
+                        id: 'result',
+                        activeTab: 'resultmain'
+                    }
+                ],
+                activeTab: 'screen'
+            }
+        ],
+        
     }, {
         xtype: 'panel',
         title: 'View Report',
-        items: [{
-            xtype: 'result'
-        }]
-    }],
-    // initComponent: function() {
-    //     Ext.apply(this,{
-    //         items: [{
-    //             xtype: 'tabpanel',
-    //             reference: 'tabpanel',
-    //             border: false,
-    //             defaults: {
-    //                 bodyPadding: 10,
-    //                 autoScroll: true,
-    //                 closable: true,
-    //                 border: false
-    //             },
-    //             bind: {
-    //                 tabPosition: 'top',
-    //                 tabRotation: 0
-    //             },
-    //             items: [{
-    //                 title: 'Tab 1',
-    //                 icon: null,
-    //                 glyph: 42,
-    //                 html: 'KitchenSink.DummyText.longText'
-    //             }, {
-    //                 title: 'Tab 2',
-    //                 icon: null,
-    //                 glyph: 70,
-    //                 html: 'KitchenSink.DummyText.extraLongText'
-    //             }, {
-    //                 title: 'Tab 3',
-    //                 icon: null,
-    //                 glyph: 86,
-    //                 html: 'KitchenSink.DummyText.longText'
-    //             }]
-    //         }]
-    //     });
-
-    //     this.callParent();
-    // }
+        id: 'resultmain',
+        items: [
+            {
+                xtype: 'tabpanel',
+                items: [
+                    {
+                        title: 'Bulk Screen',
+                        items: [{
+                            xtype: 'mainlist'
+                        }],
+                        id: 'screen2',
+                        activeTab: 'screenmain'
+                    },
+                    {
+                        xtype: 'panel',
+                        title: 'View Report',
+                        items: [{
+                            xtype: 'result'
+                        }],
+                        id: 'result2'
+                    }
+                    
+                ],
+                activeTab: 'result2'
+            }
+        ],
+    }]
 });
-// Ext.define('Screen.view.main.Main', {
-//     extend: 'Ext.Base',
-//     xtype: 'app-main',
-//     requires: [
-//         'Ext.plugin.Viewport',
-//         'Ext.window.MessageBox',
-//         'Ext.layout.container.Card',
-
-//         'Screen.view.screen.Result',
-
-//         'Screen.view.main.MainController',
-//         'Screen.view.main.MainModel',
-//         'Screen.view.main.List'
-//     ],
-//     height: 400,
-//     layout: 'fit',
-//     viewModel: true,
-
-//     initComponent: function() {
-//         Ext.apply(this,{
-//             items: [{
-//                 xtype: 'tabpanel',
-//                 reference: 'tabpanel',
-//                 border: false,
-//                 defaults: {
-//                     bodyPadding: 10,
-//                     autoScroll: true,
-//                     closable: true,
-//                     border: false
-//                 },
-//                 bind: {
-//                     tabPosition: 'top',
-//                     tabRotation: 0
-//                 },
-//                 items: [{
-//                     title: 'Tab 1',
-//                     icon: null,
-//                     glyph: 42,
-//                     html: 'KitchenSink.DummyText.longText'
-//                 }, {
-//                     title: 'Tab 2',
-//                     icon: null,
-//                     glyph: 70,
-//                     html: 'KitchenSink.DummyText.extraLongText'
-//                 }, {
-//                     title: 'Tab 3',
-//                     icon: null,
-//                     glyph: 86,
-//                     html: 'KitchenSink.DummyText.longText'
-//                 }]
-//             }]
-//         });
-
-//         this.callParent();
-//     }
-// });

@@ -17,5 +17,13 @@ Ext.define('Screen.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+
+    onReportTabSelect: function () {
+        this.getBody().setActiveTab('screenmain');
+    },
+    onScreenTabSelect: function () {
+        this.getBody().setActiveTab('resultmain');
     }
+
 });
